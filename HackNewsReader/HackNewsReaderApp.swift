@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct HackNewsReaderApp: App {
@@ -13,5 +14,6 @@ struct HackNewsReaderApp: App {
         WindowGroup {
             ContentView()
         }
+        .modelContainer(for: SavedStory.self)
     }
 }

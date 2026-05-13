@@ -36,24 +36,14 @@ The app uses the public Hacker News Firebase API directly.
 ---
 
 ## Architecture
-HackNewsReader/
-├── Model/
-│   └── HackNewsModel.swift          # HNItem, FeedType, CommentNode, SavedStory
-├── Services/
-│   └── HackNewsAPIService.swift      # Actor-based API service, AsyncSemaphore
-├── ViewModel/
-│   ├── Stories.swift
-│   ├── StoryDetail.swift
-│   └── SavedStories.swift
-└── Views/
-├── ContentView.swift
-├── StoriesView.swift
-├── StoryRowView.swift
-├── StoryDetailView.swift
-├── CommentView.swift
-├── SavedView.swift
-├── SavedStoryDetailView.swift
-└── NoteEditorView.swift
+**Model/** — HackNewsModels.swift (HNItem, FeedType, CommentNode, SavedStory)
+
+**Services/** — HackNewsAPIService.swift (Actor-based API, AsyncSemaphore)
+
+**ViewModels/** — Stories, StoryDetail, SavedStories.
+
+**Views/** — ContentView, StoriesView, StoryRowView, StoryDetailView, CommentView, SavedView, SavedStoryDetailView, NoteEditorView
+
 - **Swift actors** for all network calls — no data races
 - **@Observable** macro (iOS 17) instead of ObservableObject
 - **SwiftData** for persistent storage of saved stories and notes
